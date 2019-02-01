@@ -1,9 +1,6 @@
 #!/bin/bash
 
-printf "\n--------------------------\n"
-echo "RUNNING FIRESTARTER"
-echo "--------------------------"
-
+echo "Time" "Sampling Rate"
 for i in `seq 1 20`;
 do
 output="$(./FIRESTARTER -t 2 -l 100 -b 3 -r 2>/dev/null| grep runtime)"
