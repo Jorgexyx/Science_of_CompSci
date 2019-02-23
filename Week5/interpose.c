@@ -77,12 +77,13 @@ static void set_up_msr_file_descriptors(){
 		exit(-1);	// No need to continue.  Bail out now.
 	}	
 }
-uint64_t buf = 18581643431543584;
+const uint64_t bufZero = 18581643431543584;
+uint64_t buf = 18581643431543584 - 400;
 static void mytimerhandler( int sig ) {
 	fprintf(stderr, "Ping!\n");
 	const void *writeMsrVal = buf;
 	read_msrs(writeMsrVal);
-	buf = buf + 25;
+	buf = buf + 35;
 	dump_msrs();
 }
 
